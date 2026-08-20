@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    border-color: theme('colors.neutral.800');
+  }
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  body {
+    @apply antialiased;
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-xl border border-neutral-800 bg-neutral-900/60 backdrop-blur-sm;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-primary-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-primary-500 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-neutral-300 transition hover:bg-neutral-800 hover:text-white;
+  }
+  .input {
+    @apply w-full rounded-lg border border-neutral-700 bg-neutral-900 px-3 py-2 text-sm text-neutral-100 placeholder-neutral-500 transition focus:border-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-500;
+  }
+  .label {
+    @apply mb-1.5 block text-sm font-medium text-neutral-300;
+  }
+  .status-dot {
+    @apply inline-block h-2 w-2 rounded-full;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
